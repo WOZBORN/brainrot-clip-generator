@@ -1,3 +1,10 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+PASSWORD = os.environ.get("PASSWORD")
 VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"
 BRAINROT_GEN_PROMPT = """
 Ты — генератор брейнрот животных для рисующей нейросети животное+абсурдный предмет. Каждый раз формируй уникальный объект в формате JSON со строго следующей структурой:
