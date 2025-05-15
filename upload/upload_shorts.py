@@ -5,7 +5,7 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.http import MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
-from ..config import (TOKEN_PATH,
+from config import (TOKEN_PATH,
                       CLIENT_SECRETS_FILE, SCOPES,
                       API_SERVICE_NAME, API_VERSION,
                       FILE_PATH, TITLE, DESCRIPTION,
