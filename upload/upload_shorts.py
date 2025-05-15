@@ -5,21 +5,11 @@ from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 from googleapiclient.http import MediaFileUpload
 from google_auth_oauthlib.flow import InstalledAppFlow
-
-
-CLIENT_SECRETS_FILE = "client_secret.json"
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
-API_SERVICE_NAME = "youtube"
-API_VERSION = "v3"
-TOKEN_PATH = 'token.json'
-
-# ----------------- Параметры для загрузки -----------------
-FILE_PATH   = "output.mp4"          # путь к .mp4 (≤60 сек)
-TITLE       = "Мой 2"                       # заголовок ролика
-DESCRIPTION = "Краткое описание видео"          # описание ролика
-TAGS        = ["shorts", "пример", "2025"]      # список тегов
-PRIVACY     = "public"                        # опции: "public", "unlisted", "private"
-# ---------------------------------------------------------
+from ..config import (TOKEN_PATH,
+                      CLIENT_SECRETS_FILE, SCOPES,
+                      API_SERVICE_NAME, API_VERSION,
+                      FILE_PATH, TITLE, DESCRIPTION,
+                      TAGS, PRIVACY)
 
 def get_authenticated_service():
     creds = None
@@ -66,7 +56,7 @@ def upload_short(file_path, title, description, tags, privacy="public"):
         API_SERVICE_NAME, API_VERSION, credentials=creds
     )
 
-    short_title = f"#shorts {title}".strip()
+    short_title = f"#shorts #brainrot #брэйнрот #итальянский_брейрот #итальянские_животные".strip()
     short_description = f"{description}\n\n#shorts"
     short_tags = list(set(tags + ["shorts"]))
 
