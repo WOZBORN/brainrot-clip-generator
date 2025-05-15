@@ -3,7 +3,6 @@ import os
 import re
 
 from dotenv import load_dotenv
-from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
 
 from AI.image_gen import generate_image
 from AI.video_gen import VideoService
