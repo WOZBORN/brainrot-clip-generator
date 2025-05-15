@@ -9,6 +9,7 @@ from AI.image_gen import generate_image
 from AI.voice_gen import generate_voice
 from concurrent.futures import ThreadPoolExecutor
 from AI.video_gen import VideoService
+from upload.upload_shorts import upload_short
 from utils.ffmpeg_process import make_boomerang_clip, merge_loop_and_audio
 
 
@@ -51,3 +52,5 @@ def pipeline_task():
 
         # 2) зацикливаем boomerang, микшуем звук и обрезаем
         merge_loop_and_audio("boomerang.mp4", "voice.mp3", "resources/music.mp3", "output.mp4")
+
+        upload_short("output.mp4", name, phrase, "shorts", "public")
