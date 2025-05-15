@@ -27,7 +27,7 @@ def pipeline_task():
     with ThreadPoolExecutor() as ex:
         clean = re.sub(r'^```(?:json)?\s*', '', prompt)
         clean = re.sub(r'\s*```$', '', clean)
-
+        print(clean)
         data = json.loads(clean)
 
         name = data["name"]

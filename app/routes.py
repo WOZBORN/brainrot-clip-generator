@@ -1,5 +1,7 @@
-from flask import Blueprint, request, jsonify, render_template
-from config import PASSWORD
+from flask import Blueprint, request, jsonify, render_template, url_for
+from google_auth_oauthlib.flow import Flow
+
+from config import PASSWORD, CLIENT_SECRETS_FILE, SCOPES, TOKEN_PATH
 from .scheduler import start_scheduler, stop_scheduler
 from upload.upload_shorts import get_authenticated_service
 
@@ -39,4 +41,14 @@ def stop():
 
 @bp.route("/success", methods=["GET"])
 def success():
-    return """Authorized"""
+    code = request.args.get('code')
+    flow = Flow.from_client_secrets_file(
+        CLIENT_SECRETS_FILE,
+        scopes=SCOPES,
+        redirect_uri=url_for('scheduler.success', _external=True)
+    )
+    flow.fetch_token(code=code)
+    creds = flow.credentials
+    with open(TOKEN_PATH, 'w') as token_file:
+        token_file.write(creds.to_json())
+    return 'Authorized'

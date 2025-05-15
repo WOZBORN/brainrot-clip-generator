@@ -27,6 +27,7 @@ def get_authenticated_service():
     )
     flow.redirect_uri = "http://localhost:5000/success"
 
+
     auth_url, _ = flow.authorization_url(
         access_type='offline',
         include_granted_scopes='true',

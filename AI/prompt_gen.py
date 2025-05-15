@@ -13,13 +13,18 @@ client = OpenAI(
 )
 
 def generate_brainrot_prompt() -> str:
-  completion = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-      {
-        "role": "user",
-        "content": BRAINROT_GEN_PROMPT
-      }
-    ]
-  )
-  return completion.choices[0].message.content
+  # completion = client.chat.completions.create(
+  #   model="gpt-4o",
+  #   messages=[
+  #     {
+  #       "role": "user",
+  #       "content": BRAINROT_GEN_PROMPT
+  #     }
+  #   ]
+  # )
+  return """{  
+  "name": "Космокот",  
+  "italian_name": "Gatto Cosmico",  
+  "image_prompt": "Нарисуй Космокота: футуристического кота-астронавта в полный рост, парящего в невесомости среди звёзд, с прозрачным шлемом, наполненным мерцающими галактиками, и реактивными ботинками, оставляющими светящийся след. На его груди — мини-экран с картой Вселенной. 3D",  
+  "phrase": "Gatto Cosmico è l’esploratore più audace della Via Lattea. Nato su una stazione spaziale, ha viaggiato attraverso nebulose e buchi neri, collezionando stelle come souvenir. Il suo sogno? Trovare la leggendaria Pianeta dei Topi, dove si dice che il formaggio sia eterno."  
+}"""

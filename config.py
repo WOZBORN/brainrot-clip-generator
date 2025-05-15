@@ -22,6 +22,8 @@ BRAINROT_GEN_PROMPT = """
 3. «image_prompt» — яркое, чёткое описание для нейросети. Каждый раз меняй среду, предметы (могут быть любыми), форму (может быть любой), но сохраняй формат «Нарисуй… 3D». 
 4. «phrase» — развернутый текст на итальянском, 1 абзац. Расскажи предысторию, привычки или мечты героя, добавь эмоций и деталей.
 5. JSON строго соблюдай: кавычки, запятые и формат — без ошибок.
+6. Не форматируй сообщения в Markdown
+7. Не используй бэктики
 
 Пример с учётом новых требований:
 
@@ -37,7 +39,10 @@ BRAINROT_GEN_PROMPT = """
 
 
 CLIENT_SECRETS_FILE = "client_secret.json"
-SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
+SCOPES = [
+    'https://www.googleapis.com/auth/youtube.readonly',
+    'https://www.googleapis.com/auth/youtube.upload'
+]
 API_SERVICE_NAME = "youtube"
 API_VERSION = "v3"
 TOKEN_PATH = 'token.json'
