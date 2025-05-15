@@ -3,11 +3,13 @@ import os
 import re
 
 from dotenv import load_dotenv
+from moviepy.editor import VideoFileClip, AudioFileClip, CompositeAudioClip
 
 from AI.image_gen import generate_image
 from AI.video_gen import VideoService
 from AI.prompt_gen import generate_brainrot_prompt
-
+from AI.voice_gen import generate_voice
+from utils.ffmpeg_process import merge_with_ffmpeg
 
 load_dotenv()
 AK = os.getenv("KLING_AK")
@@ -43,6 +45,13 @@ def main():
         saved_files = video_service.poll_status_and_download(task_id)
         print("Downloaded videos:", saved_files)
 
+    generate_voice(phrase)
+    merge_with_ffmpeg(
+        video_path="../video.mp4",
+        voice_path="voice.mp3",
+        music_path="music.mp3",
+        out_path="output.mp4"
+    )
 
 if __name__ == "__main__":
     main()
