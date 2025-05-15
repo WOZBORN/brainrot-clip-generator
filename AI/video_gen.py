@@ -12,7 +12,7 @@ class VideoService:
                                      prompt: str,
                                      model_name: str = "kling-v2-master",
                                      mode: str = "pro",
-                                     duration: int = 5,
+                                     duration: int = 10,
                                      cfg_scale: float = 0.5,
                                      max_retries: int = 5,
                                      backoff: int = 5) -> dict:
