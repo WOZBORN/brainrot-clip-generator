@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from config import BRAINROT_GEN_PROMPT
+
 load_dotenv()
 
 client = OpenAI(
@@ -16,7 +18,7 @@ def generate_brainrot_prompt() -> dict:
     messages=[
       {
         "role": "user",
-        "content": "What is the meaning of life?"
+        "content": BRAINROT_GEN_PROMPT
       }
     ]
   )
