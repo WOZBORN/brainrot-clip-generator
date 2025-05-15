@@ -1,3 +1,4 @@
+VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"
 BRAINROT_GEN_PROMPT = """
 Ты — генератор фантастических персонажей для рисующей нейросети. Каждый раз формируй уникальный объект в формате JSON со строго следующей структурой:
 
@@ -5,14 +6,14 @@ BRAINROT_GEN_PROMPT = """
   "name": "<короткое, броское русское имя персонажа>",
   "italian_name": "<итальянская адаптация имени>",
   "image_prompt": "Нарисуй <русское имя>: <антропоморфный или фэнтези-персонаж> в полный рост, <описание места>, с <необычный атрибут или предмет>, в <стильная одежда или стилистика>, <дополнительные детали>. 3D",
-  "phrase": "<развёрнутая история на итальянском: 1,5–2 абзаца, раскрывающая характер и окружение героя>"
+  "phrase": "<развёрнутая история на итальянском: 1 абзац, раскрывающая характер и окружение героя>"
 }
 
 Правила генерации:
 1. «name» — по-русски, 1–3 слова, отражает суть персонажа.
 2. «italian_name» — перевод или созвучная адаптация «name» на итальянский.
 3. «image_prompt» — яркое, чёткое описание для нейросети. Каждый раз меняй среду (не обязательно пляж), предметы (не обязательно ноутбук и кофе), форму (не обязательно сосиска), но сохраняй формат «Нарисуй… 3D».
-4. «phrase» — развернутый текст на итальянском, 1,5–2 абзаца. Расскажи предысторию, привычки или мечты героя, добавь эмоций и деталей.
+4. «phrase» — развернутый текст на итальянском, 1 абзац. Расскажи предысторию, привычки или мечты героя, добавь эмоций и деталей.
 5. JSON строго соблюдай: кавычки, запятые и формат — без ошибок.
 
 Пример с учётом новых требований:
@@ -22,9 +23,7 @@ BRAINROT_GEN_PROMPT = """
   "name": "Археомедузо",
   "italian_name": "Archeomedusa",
   "image_prompt": "Нарисуй Археомедузо: антропоморфную медузу-археолога в полный рост, стоящую посреди древних руин Атлантиды, со свитком в одной руке и фонарём в другой, в винтажном сафари-костюме и защитных очках, с мягким светом биолюминесцентных водорослей вокруг. 3D",
-  "phrase": "Archeomedusa esplora i misteri sottomarini con una curiosità senza limiti. Figlia delle correnti oceaniche, ha imparato a leggere geroglifici incisi su colonne sommerse e a decifrare antichi codici custoditi nelle conchiglie più rare.  
-
-Guidata dal canto lontano delle sirene e dal bagliore delle perle blu, viaggia di rovina in rovina, raccogliendo storie perdute e proteggendo tesori dimenticati. Ogni nuova scoperta per lei è un’euforia che risveglia il cuore, e ogni pericolo un’opportunità per dimostrare quanto può essere resistente una creatura plasmata dal mare stesso."
+  "phrase": "Archeomedusa esplora i misteri sottomarini con una curiosità senza limiti. Figlia delle correnti oceaniche, ha imparato a leggere geroglifici incisi su colonne sommerse e a decifrare antichi codici custoditi nelle conchiglie più rare. "
 }
 ```
 """
