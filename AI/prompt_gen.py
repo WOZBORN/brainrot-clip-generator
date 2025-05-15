@@ -12,7 +12,7 @@ client = OpenAI(
   api_key=os.environ.get("OPENROUTER_API_KEY"),
 )
 
-def generate_brainrot_prompt() -> dict:
+def generate_brainrot_prompt() -> str:
   completion = client.chat.completions.create(
     model="deepseek/deepseek-chat-v3-0324:free",
     messages=[
