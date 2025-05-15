@@ -1,7 +1,8 @@
 import base64
 from openai import OpenAI
 
-def generate_image(prompt: str, client):
+def generate_image(prompt: str):
+    client = OpenAI()
     resp = client.images.generate(
         model="gpt-image-1",
         prompt=prompt,
