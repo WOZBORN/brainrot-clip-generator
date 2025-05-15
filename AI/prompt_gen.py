@@ -8,13 +8,13 @@ from config import BRAINROT_GEN_PROMPT
 load_dotenv()
 
 client = OpenAI(
-  base_url="https://openrouter.ai/api/v1",
+  base_url="https://api.proxyapi.ru/openai/v1",
   api_key=os.environ.get("OPENROUTER_API_KEY"),
 )
 
 def generate_brainrot_prompt() -> str:
   completion = client.chat.completions.create(
-    model="deepseek/deepseek-chat-v3-0324:free",
+    model="gpt-4o",
     messages=[
       {
         "role": "user",
