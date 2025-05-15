@@ -10,7 +10,7 @@ def start_scheduler():
         scheduler.add_job(
             pipeline_task,
             trigger="interval",
-            hours=1,
+            hours=12,
             id="brainrot_pipeline",
             max_instances=1,
             coalesce=True
