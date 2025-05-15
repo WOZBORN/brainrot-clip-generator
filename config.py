@@ -27,3 +27,18 @@ BRAINROT_GEN_PROMPT = """
 }
 ```
 """
+
+
+CLIENT_SECRETS_FILE = "client_secret.json"
+SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+API_SERVICE_NAME = "youtube"
+API_VERSION = "v3"
+TOKEN_PATH = 'token.json'
+
+# ----------------- Параметры для загрузки -----------------
+FILE_PATH   = "output.mp4"          # путь к .mp4 (≤60 сек)
+TITLE       = "Мой 2"                       # заголовок ролика
+DESCRIPTION = "Краткое описание видео"          # описание ролика
+TAGS        = ["shorts", "пример", "2025"]      # список тегов
+PRIVACY     = "public"                        # опции: "public", "unlisted", "private"
+# ---------------------------------------------------------
