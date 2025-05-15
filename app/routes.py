@@ -35,3 +35,8 @@ def stop():
         return jsonify({"status": "Scheduler stopped"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@bp.route("/success", methods=["GET"])
+def success():
+    return """Authorized"""
