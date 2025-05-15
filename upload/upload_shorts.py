@@ -25,6 +25,8 @@ def get_authenticated_service():
     flow = InstalledAppFlow.from_client_secrets_file(
         CLIENT_SECRETS_FILE, SCOPES
     )
+    flow.redirect_uri = "http://localhost:5000/success"
+
     auth_url, _ = flow.authorization_url(
         access_type='offline',
         include_granted_scopes='true',

@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-PASSWORD = os.environ.get("PASSWORD")
+PASSWORD = os.environ.get("API_PASSWORD")
 VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"
 BRAINROT_GEN_PROMPT = """
 Придумай необычный гибрид предмета и животного. Это должен быть полный синтез животного и предмета. Опиши его максимально подробно в формате промта для Midjourney. Пример: «Бомбардиро Крокодило — крокодил с крыльями истребителя, камуфляжной окраской и реактивными двигателями вместо лап». Каждый раз формируй уникальный объект в формате JSON со строго следующей структурой:
@@ -37,7 +37,7 @@ BRAINROT_GEN_PROMPT = """
 
 
 CLIENT_SECRETS_FILE = "client_secret.json"
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
 API_SERVICE_NAME = "youtube"
 API_VERSION = "v3"
 TOKEN_PATH = 'token.json'

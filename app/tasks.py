@@ -18,7 +18,9 @@ def pipeline_task():
     load_dotenv()
     AK = os.getenv("KLING_AK")
     SK = os.getenv("KLING_SK")
+    print("Generating prompt...")
     prompt = generate_brainrot_prompt()
+    print("Prompt generated:", prompt)
     video_service = VideoService(AK, SK)
 
     # 2) Параллельно создаём картинку и аудио
